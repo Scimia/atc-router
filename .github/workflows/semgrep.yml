@@ -11,6 +11,7 @@ on:
 
 jobs:
   semgrep:
+    timeout-minutes: ${{ fromJSON(vars.GHA_DEFAULT_TIMEOUT) }}
     name: SAST
     runs-on: ubuntu-20.04
     permissions:
