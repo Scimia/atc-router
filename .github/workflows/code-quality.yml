@@ -13,6 +13,7 @@ concurrency:
 
 jobs:
   lua:
+    timeout-minutes: ${{ fromJSON(vars.GHA_DEFAULT_TIMEOUT) }}
     name: Lua Lint
     runs-on: ubuntu-20.04
     permissions:
@@ -42,6 +43,7 @@ jobs:
         files: ${{ steps.changed-files.outputs.all_changed_files }}
   
   rust:
+    timeout-minutes: ${{ fromJSON(vars.GHA_DEFAULT_TIMEOUT) }}
     name: Rust Clippy & SCA
     runs-on: ubuntu-20.04
     
